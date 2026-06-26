@@ -47,16 +47,13 @@ function randomHex(len: number): string {
 }
 
 async function sha256(input: string): Promise<string> {
-  if (typeof window !== "undefined" && window.crypto?.subtle) {
-    const buf = new TextEncoder().encode(input);
-    const hash = await window.crypto.subtle.digest("SHA-256", buf);
-    return "0x" + Array.from(new Uint8Array(hash))
-      .map((b) => b.toString(16).padStart(2, "0"))
-      .join("");
-  }
-  // fallback simple hash
   let h = 0;
-  for (let i = 0; i < input.length; i++) h = ((h << 5) - h + input.charCodeAt(i)) | 0;
+
+  for (let i = 0; i < input.length; i++) {
+    h = ((h << 5) - h + input.charCodeAt(i)) | 0;
+  }
+
+
   return "0x" + Math.abs(h).toString(16).padStart(64, "0");
 }
 
