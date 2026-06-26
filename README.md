@@ -1,49 +1,27 @@
-# BlockFarm
+# Menjalankan Aplikasi
 
-BlockFarm adalah aplikasi web berbasis blockchain untuk melakukan pelacakan (traceability) produk pertanian dari petani hingga pedagang.
+## 1. Clone repository
 
-## Fitur
-- Registrasi produk pertanian
-- Riwayat distribusi produk
-- QR Code untuk pelacakan
-- Verifikasi integritas blockchain
-- Smart Contract menggunakan Hardhat
-- Docker support
-
-## Teknologi
-- React + Vite
-- TypeScript
-- Hardhat
-- Solidity
-- Docker
-- Docker Compose
-
-## Menjalankan Proyek
-
-### Menggunakan Docker
-
-```bash
 git clone https://github.com/andimufidahidris03-commits/blockfarm.git
-cd blockfarm
-docker compose up --build
-```
 
-Aplikasi akan berjalan di:
+cd blockfarm
+
+## 2. Install dependency
+
+npm install
+
+## 3. Jalankan Hardhat Node
+
+npx hardhat node
+
+## 4. Deploy Smart Contract
+
+npx hardhat ignition deploy ./ignition/modules/BlockFarm.ts --network localhost
+
+## 5. Jalankan aplikasi
+
+docker compose up --build
+
+Aplikasi dapat diakses pada:
 
 http://localhost:8080
-
-### Tanpa Docker
-
-```bash
-npm install
-npm run dev
-```
-
-## Struktur Proyek
-
-```
-contracts/     Smart Contract Solidity
-src/           Source code React
-scripts/       Deployment Script
-test/          Smart Contract Test
-```
