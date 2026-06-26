@@ -34,3 +34,4 @@ dist-ssr
 cache/
 artifacts/
 data/
+ignition/deployments/
