@@ -1,42 +1,49 @@
 # BlockFarm
 
-Aplikasi blockchain untuk pencatatan rantai pasok hasil pertanian.
+BlockFarm adalah aplikasi web berbasis blockchain untuk melakukan pelacakan (traceability) produk pertanian dari petani hingga pedagang.
 
-## Requirement
+## Fitur
+- Registrasi produk pertanian
+- Riwayat distribusi produk
+- QR Code untuk pelacakan
+- Verifikasi integritas blockchain
+- Smart Contract menggunakan Hardhat
+- Docker support
 
-- Docker Desktop
-- Git
-
-## Menjalankan Project
-
-Clone repository:
-
-```bash
-git clone https://github.com/andimufidahidris03-commits/blockfarm.git
-```
-
-Masuk ke folder:
-
-```bash
-cd blockfarm
-```
-
-Jalankan Docker:
-
-```bash
-docker compose up --build
-```
-
-Buka browser:
-
-```
-http://localhost:8080
-```
-
-## Tech Stack
-
+## Teknologi
 - React + Vite
 - TypeScript
 - Hardhat
 - Solidity
 - Docker
+- Docker Compose
+
+## Menjalankan Proyek
+
+### Menggunakan Docker
+
+```bash
+git clone https://github.com/andimufidahidris03-commits/blockfarm.git
+cd blockfarm
+docker compose up --build
+```
+
+Aplikasi akan berjalan di:
+
+http://localhost:8080
+
+### Tanpa Docker
+
+```bash
+npm install
+npm run dev
+```
+
+## Struktur Proyek
+
+```
+contracts/     Smart Contract Solidity
+src/           Source code React
+scripts/       Deployment Script
+test/          Smart Contract Test
+```
