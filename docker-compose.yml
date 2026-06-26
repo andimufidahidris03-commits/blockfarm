@@ -1,0 +1,10 @@
+services:
+  blockfarm:
+    build: .
+    container_name: blockfarm-container
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+    volumes:
+      - ./data:/app/data
